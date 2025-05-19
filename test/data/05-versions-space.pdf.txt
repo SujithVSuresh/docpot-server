@@ -1,0 +1,111 @@
+
+
+ Cloud Computing Reading Comprehension 
+ Passage: Cloud Computing in India's IT Landscape 
+ Cloud  computing  has  revolutionised  the  way  businesses  operate  in  India's  rapidly  evolving 
+ IT  sector.  As  organisations  increasingly  migrate  from  traditional  on-premises  infrastructure  to 
+ cloud-based  solutions,  the  demand  for  skilled  professionals  familiar  with  cloud  technologies 
+ continues  to  surge.  According  to  NASSCOM,  India's  cloud  computing  market  is  projected  to 
+ reach $7.1 billion by 2022, growing at a CAGR of approximately 30%. 
+ For  IT  freshers  in  India,  understanding  cloud  concepts  is  no  longer  optional  but  essential. 
+ The  three  primary  service  models—Infrastructure  as  a  Service  (IaaS),  Platform  as  a  Service 
+ (PaaS),  and  Software  as  a  Service  (SaaS)—form  the  foundation  of  cloud  computing 
+ knowledge.  IaaS  provides  virtualised  computing  resources  over  the  internet,  allowing 
+ businesses  to  rent  servers,  storage,  and  networking  components  without  maintaining 
+ physical  hardware.  PaaS  offers  development  and  deployment  environments  that  enable 
+ organisations  to  build  applications  without  managing  the  underlying  infrastructure.  SaaS 
+ delivers  software  applications  over  the  internet  on  a  subscription  basis,  eliminating  the  need 
+ for local installation and maintenance. 
+ Major  cloud  service  providers  like  AWS,  Microsoft  Azure,  and  Google  Cloud  have 
+ established  a  significant  presence  in  India,  opening  data  centers  to  comply  with  data 
+ localisation  requirements  and  provide  low-latency  services.  Amazon  Web  Services  (AWS) 
+ launched  its  Mumbai  region  in  2016,  offering  a  suite  of  cloud  services  tailored  for  Indian 
+ businesses.  Microsoft  Azure  followed  with  data  centers  in  Pune,  Chennai,  and  Mumbai, 
+ focusing  on  providing  enterprise-grade  cloud  solutions.  Google  Cloud  expanded  its  footprint 
+ with a Mumbai region in 2017 and announced plans for a second region in Delhi NCR. 
+ The  COVID-19  pandemic  accelerated  cloud  adoption  across  India  as  remote  work  became 
+ the  norm.  Organisations  quickly  realised  the  benefits  of  cloud  infrastructure,  including 
+ scalability,  cost-efficiency,  and  business  continuity.  This  shift  created  numerous  opportunities 
+ for  IT  professionals  with  cloud  expertise.  According  to  industry  reports,  cloud  architects, 
+ solutions  architects,  DevOps  engineers,  and  cloud  security  specialists  are  among  the 
+ highest-paid IT roles in India today. 
+ For  IT  freshers  entering  the  job  market,  cloud  certifications  have  become  valuable 
+ credentials  that  demonstrate  their  technical  proficiency.  AWS  Certified  Solutions  Architect, 
+ Microsoft  Certified:  Azure  Fundamentals,  and  Google  Associate  Cloud  Engineer  are  popular 
+ entry-level  certifications  that  significantly  enhance  employability.  Additionally,  knowledge  of 
+ containerization  technologies  like  Docker  and  orchestration  tools  like  Kubernetes  has 
+ become increasingly important as organisations adopt microservices architectures. 
+ As  India's  digital  transformation  continues,  the  government  has  also  embraced  cloud 
+ computing  through  initiatives  like  the  "GI  Cloud"  or  "MeghRaj,"  which  aims  to  accelerate  the 
+ delivery  of  e-services  while  optimising  ICT  spending.  This  government-wide  initiative 
+ promotes  the  adoption  of  cloud  technologies  across  various  departments  and  agencies, 
+ creating additional opportunities for cloud professionals. 
+
+ Despite  the  growth,  challenges  remain  in  India's  cloud  computing  landscape.  Concerns 
+ about  data  security,  compliance  with  regulations  like  the  Personal  Data  Protection  Bill,  and 
+ the  shortage  of  skilled  professionals  are  significant  hurdles.  Organisations  are  investing  in 
+ training  programs  to  upskill  their  workforce,  creating  partnerships  with  educational 
+ institutions, and developing cloud centers of excellence to address these challenges. 
+ For  IT  freshers  in  India,  developing  cloud  computing  skills  represents  a  strategic  career 
+ investment.  Those  who  understand  cloud  architectures,  deployment  models,  and  security 
+ considerations  will  be  well-positioned  to  thrive  in  India's  dynamic  IT  sector.  As  cloud 
+ adoption  continues  to  accelerate,  the  demand  for  professionals  who  can  help  organisations 
+ navigate their cloud journey will only increase in the coming years. 
+ Write a summary of the passage and respond to the following questions 
+ 1.  According  to  the  passage,  what  is  the  projected  value  of  India's  cloud  computing  market 
+ by 2022? 
+ a) $5.1 billion 
+ b) $6.1 billion 
+ c) $7.1 billion 
+ d) $8.1 billion 
+ 2.  Which  of  the  following  is  NOT  mentioned  as  a  primary  service  model  of  cloud  computing 
+ in the passage? 
+ a) Infrastructure as a Service (IaaS) 
+ b) Platform as a Service (PaaS) 
+ c) Database as a Service (DBaaS) 
+ d) Software as a Service (SaaS) 
+ 3. When did AWS launch its Mumbai region, according to the passage? 
+ a) 2015 
+ b) 2016 
+ c) 2017 
+ d) 2018 
+ 4.  What  government  initiative  is  mentioned  in  the  passage  that  aims  to  accelerate  the 
+ delivery of e-services? 
+ a) Digital India 
+ b) Make in India 
+ c) GI Cloud or MeghRaj 
+ d) Smart Cities Mission 
+ 5.  Based  on  the  passage,  which  factor  was  NOT  mentioned  as  accelerating  cloud  adoption 
+ in India? 
+ a) The COVID-19 pandemic 
+ b) Government tax incentives 
+ c) Remote work becoming the norm 
+ d) Benefits of scalability and cost-efficiency 
+
+ 6. According to the passage, which cities in India have Microsoft Azure data centers? 
+ a) Mumbai, Delhi, and Bangalore 
+ b) Pune, Chennai, and Mumbai 
+ c) Hyderabad, Bangalore, and Mumbai 
+ d) Delhi, Chennai, and Kolkata 
+ 7. What are described as valuable credentials for IT freshers entering the job market? 
+ a) College degrees 
+ b) Cloud certifications 
+ c) Programming contest awards 
+ d) Internship experiences 
+ 8.  The  passage  suggests  that  knowledge  of  which  technologies  has  become  increasingly 
+ important as organizations adopt microservices architectures? 
+ a) Java and Python 
+ b) Docker and Kubernetes 
+ c) SQL and NoSQL 
+ d) Hadoop and Spark 
+ 9. Which of the following is mentioned as a challenge in India's cloud computing landscape? 
+ a) Shortage of skilled professionals 
+ b) Limited internet connectivity 
+ c) High import duties on hardware 
+ d) Lack of international cloud providers 
+ 10.  What  growth  rate  (CAGR)  is  mentioned  for  India's  cloud  computing  market  in  the 
+ passage? 
+ a) Approximately 20% 
+ b) Approximately 25% 
+ c) Approximately 30% 
+ d) Approximately 35% 
