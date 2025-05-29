@@ -1,10 +1,11 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import pdf from "pdf-parse";
 import { pipeline } from "@xenova/transformers";
 import pinecone from "../config/pineconeClient.js";
 import groq from "../config/groqClient.js";
+
+import splitter from "../utils/splitter.js";
 
 const docProcessor = async (req, res) => {
   try {
@@ -12,23 +13,21 @@ const docProcessor = async (req, res) => {
       res.status(400).json({ error: "No file uploaded" });
       return;
     }
-    console.log(req.file);
 
+    //parsing the pdf content
     const pdfData = await pdf(req.file.buffer);
 
-    const splitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 300,
-      chunkOverlap: 20,
-    });
+    console.log([pdfData.text][0].split('\n'), "pdf dataa")
 
-    const chunks = await splitter.createDocuments([pdfData.text]);
+    //splitting pdf into chunks
+    const chunks = await splitter(pdfData)
 
+    // Generate embeddings for each chunk
     const embedder = await pipeline(
       "feature-extraction",
       "Xenova/all-MiniLM-L6-v2"
     );
 
-    // Generate embeddings for each chunk
     const embeddings = await Promise.all(
       chunks.map(async (chunk) => {
         const embedding = await embedder(chunk.pageContent, {
@@ -39,8 +38,7 @@ const docProcessor = async (req, res) => {
       })
     );
 
-    console.log(chunks, embeddings, " chunkss...");
-
+    // inserting vectors to pinecone
     const index = pinecone.Index(process.env.PINECONE_INDEX_NAME);
 
     const vectorsToUpsert = embeddings.map((embedding, idx) => ({
@@ -50,8 +48,6 @@ const docProcessor = async (req, res) => {
         chunkText: chunks[idx].pageContent,
       },
     }));
-
-
 
     await index.upsert(vectorsToUpsert);
 
@@ -76,6 +72,7 @@ const searchChunks = async (req, res) => {
       return res.status(400).json({ error: "Query is required" });
     }
 
+    // embedding the prompt
     const embedder = await pipeline(
       "feature-extraction",
       "Xenova/all-MiniLM-L6-v2"
@@ -86,6 +83,8 @@ const searchChunks = async (req, res) => {
     });
 
     const vector = Array.from(queryEmbedding.data);
+
+    //quering the db
     const index = pinecone.Index(process.env.PINECONE_INDEX_NAME);
 
     const queryResponse = await index.query({
@@ -94,8 +93,7 @@ const searchChunks = async (req, res) => {
       includeMetadata: true,
     });
 
-    console.log("jaja", queryResponse);
-
+    //structuring the response with metadata
     const results = queryResponse.matches.map((match) => ({
       score: match.score,
       chunkText: match.metadata.chunkText,
@@ -107,6 +105,7 @@ const searchChunks = async (req, res) => {
       context = item.chunkText;
     });
 
+    // asking the llm with the user question and context data
     let llmPrompt = `
         You are an expert assistant. Use the following context to answer the question as accurately as possible.
            Context:
@@ -116,14 +115,13 @@ const searchChunks = async (req, res) => {
              ${prompt}
     `;
 
+    // structuring the response with llm api
     const chatCompletion = await groq.chat.completions.create({
       messages: [{ role: "user", content: llmPrompt }],
-      model: "llama3-8b-8192"
+      model: "llama3-8b-8192",
     });
 
-    console.log("output", chatCompletion["choices"][0].message);
-
-    res.json({ result: chatCompletion["choices"][0].message});
+    res.json({ result: chatCompletion["choices"][0].message });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
